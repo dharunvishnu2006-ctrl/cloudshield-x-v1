@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import altair as alt
 from src.scanner import CloudShieldScanner
 from src.log_reader import read_logs
 from src.ip_detector import detect_suspicious_ips
@@ -52,3 +54,19 @@ if page == "Dashboard":
         m1.metric("Total Logs Scanned", len(logs))
         m2.metric("Suspicious IPs", len(suspicious))
         m3.metric("Alerts Raised", len(alerts))
+
+        if suspicious:
+            st.divider()
+            st.subheader("Failed Login Attempts by IP")
+
+            chart_data = pd.DataFrame({
+                "IP": list(suspicious.keys()),
+                "Failed Attempts": list(suspicious.values())
+            })
+
+            chart = alt.Chart(chart_data).mark_bar().encode(
+                x="IP",
+                y="Failed Attempts",
+                color=alt.value("#ff4b4b")
+            )
+            st.altair_chart(chart, use_container_width=True)

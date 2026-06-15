@@ -5,7 +5,7 @@ def raise_alerts(suspicious: dict) -> list:
         return []
     messages = []
     for ip, count in suspicious.items():
-        msg = f"⚠ ALERT: {ip} had {count} failed logins"
+        msg = f"ALERT: {ip} had {count} failed logins"
         print(msg)
         messages.append(msg)
     return messages

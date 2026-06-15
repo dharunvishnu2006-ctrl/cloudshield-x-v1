@@ -70,3 +70,19 @@ if page == "Dashboard":
                 color=alt.value("#ff4b4b")
             )
             st.altair_chart(chart, use_container_width=True)
+
+elif page == "About":
+    st.subheader("About Cloudshield X")
+    st.write("""
+    **CloudShield X** is an open-source Cloud Security Posture 
+    Management (CSPM) platform, built from scratch in Python.
+    
+    This is **v1 of 6** — the foundation layer, focused on 
+    server log analysis and brute-force detection.
+    """)
+
+    st.markdown("### Tech Stack")
+    st.markdown("`Python` `Pandas` `NumPy` `Streamlit` `pytest` `Git`")
+
+    st.markdown("### Links")
+    st.markdown("[GitHub Repo](https://github.com/dharunvishnu2006-ctrl/cloudshield-x-v1)")

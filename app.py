@@ -55,6 +55,14 @@ if page == "Dashboard":
         m2.metric("Suspicious IPs", len(suspicious))
         m3.metric("Alerts Raised", len(alerts))
 
+        with open(report_path, "rb") as f:
+            st.download_button(
+                label="Download Security Report (CSV)",
+                data=f,
+                file_name="security_report.csv",
+                mime="text/csv"
+        )    
+
         if suspicious:
             st.divider()
             st.subheader("Failed Login Attempts by IP")

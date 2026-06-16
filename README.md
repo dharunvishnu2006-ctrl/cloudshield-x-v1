@@ -68,4 +68,4 @@ This is **v1 of 6**. Each future version adds a new layer of mastery toward a fu
 
 ## 👤 Author
 
-**J. Dharun Vishnu — Future AI/ML + Cyber Security Engineer 🎯
+J. Dharun Vishnu — Future AI/ML + Cyber Security Engineer 🎯
